@@ -1,0 +1,16 @@
+<div>
+  <mat-form-field class="example-full-width">
+    <mat-label>Unfallort (index)</mat-label>
+    <input matInput  [(ngModel)]="curInput" type="number">
+  </mat-form-field>
+  <button mat-raised-button (click)="addUnfallOrt()" [disabled]="this.curInput > this.curStrecke.length-1">abschicken</button>
+
+  <br>Unfallorte: <br>
+  <ul>
+    <li *ngFor="let ort of unfallorte">
+      index: {{ort.index}}<br>
+      Streckentyp: {{ort.streckenTyp}}<br><br>
+    </li>
+  </ul>
+
+</div>

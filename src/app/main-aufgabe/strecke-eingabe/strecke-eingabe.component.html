@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-header><h1>Barcelona || {{strecke}} || Mallorca</h1> </mat-card-header>
+  <div class="button-row">
+    <button mat-raised-button color="primary" (click)="manipulateStrecke('addNoTel')">No Tel</button>
+    <button mat-raised-button color="primary" (click)="manipulateStrecke('addTel')">Tel</button>
+    <button mat-raised-button color="primary" (click)="manipulateStrecke('undo')">Undo</button>
+    <button mat-raised-button color="primary" (click)="manipulateStrecke('remove')">Clear</button>
+  </div>
+</mat-card>

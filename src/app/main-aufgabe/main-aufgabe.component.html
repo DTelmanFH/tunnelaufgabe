@@ -1,0 +1,20 @@
+
+
+<mat-card>
+  <mat-card-header> <h2>Aufgabenstellung</h2> </mat-card-header>
+  <mat-card-content>
+    <app-strecke-eingabe (handOverStreckeEmitter)="getStrecke($event)"></app-strecke-eingabe><br>
+    <app-unfall-eingabe *ngIf="this.strecke.length > 0" [curStrecke]="this.strecke" (handOverUnfallOrteEmitter)="getUnfallOrte($event)"></app-unfall-eingabe>
+    <button mat-raised-button *ngIf="this.strecke.length > 0 && this.unfallorte.length > 0" (click)="calculateRichtungen()">Richtungen bestimmen</button><br>
+    <ul *ngIf="zeigeAusgabe">
+      <li *ngFor="let ort of unfallorte">
+        index: {{ort.index}}<br>
+        Streckentyp: {{ort.streckenTyp}}<br>
+        Richtung: {{ort.richtung}}<br>
+        text: {{ort.text}}<br>
+        <br>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
