@@ -13,6 +13,7 @@ export class MainAufgabeComponent {
   public zeigeAusgabe: boolean = false;
 
   getStrecke(neueStrecke: string) {
+    this.unfallorte = [];
     this.strecke = neueStrecke;
     this.zeigeAusgabe = false;
   }
@@ -37,8 +38,6 @@ export class MainAufgabeComponent {
 
       const distanceToNextLeftTelefon = this.getDistanceToNextLeftTelefon(unfallort.index);
       const distanceToNextRightTelefon = this.getDistanceToNextRightTelefon(unfallort.index);
-      console.log('distanceToNextLeftTelefon: ',distanceToNextLeftTelefon);
-      console.log('distanceToNextRightTelefon: ',distanceToNextRightTelefon);
 
       if(distanceToNextLeftTelefon !== -1 && distanceToNextRightTelefon === -1){
         // nur telefon in Richtung barcelona vorhanden

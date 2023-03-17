@@ -17,12 +17,17 @@ export class StreckeEingabeComponent {
 
   manipulateStrecke(action: string) {
 
+    if (this.strecke.length >= 500000) return;
     switch(action) {
       case 'addNoTel':
         this.strecke += '-';
         break;
       case 'addTel':
-        this.strecke += 'X';
+        const anzahlX = this.strecke.match(/X/g);
+        if (anzahlX === null || anzahlX.length < 1000) {
+          //bis 1000 Telefone
+          this.strecke += 'X';
+        }
         break;
       case 'undo':
         this.strecke = this.strecke.slice(0, -1);
