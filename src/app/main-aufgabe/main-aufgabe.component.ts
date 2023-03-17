@@ -95,9 +95,9 @@ export class MainAufgabeComponent {
       }
 
       if(distanzVomLinkenTelefonZumAusgang === distanzVomRechtenTelefonZumAusgang){
-        // Beide Telefone sind gleich weit vom Ausgang ditanziert
+        // Beide Telefone sind gleich weit vom Ausgang distanziert
         unfallort.richtung = RichtungEnum.mallorca
-        unfallort.text = 'Beide Telefone sind gleich weit vom Ausgang ditanziert';
+        unfallort.text = 'Beide Telefone sind gleich weit vom Ausgang distanziert';
         continue;
       }
     }
